@@ -1,8 +1,12 @@
 import express from 'express';
+import cors from 'cors';
 import { findrzonScrape } from './scraper/findrzonScraper.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// ✅ Ativa o CORS para permitir acesso do frontend
+app.use(cors());
 
 app.get('/api/scrape', async (req, res) => {
     const { keyword } = req.query;

@@ -27,7 +27,7 @@ export async function findrzonScrape(keyword) {
             const reviews = el.querySelector('[aria-label*="ratings"]')?.textContent?.trim() || 'No reviews';
             const imageUrl = el.querySelector('img')?.src || 'Image not found';
 
-            results.push({ title, rating, reviews, imageUrl });
+            results.push({ title, rating, reviews, imageUrl, imageLink: `Image Link: ${imageUrl}` });
         }
 
         return results;
